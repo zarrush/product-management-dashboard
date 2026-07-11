@@ -1,9 +1,20 @@
-import React from 'react'
+import React from 'react';
+import ProductCard from "./ProductCard";
 
-function ProductLists() {
-  return (
-    <div>ProductLists</div>
-  )
+const ProductLists = ({products,setProducts}) => {
+  return(
+      <>
+        {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              products={products}
+              setProducts={setProducts}
+            />
+          ))}
+      </>
+  );
+
 }
 
-export default ProductLists
+export default ProductLists;
